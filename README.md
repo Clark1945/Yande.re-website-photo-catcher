@@ -1,4 +1,4 @@
-# Yande.re-website-photo-catcher
+# Yande.re-website-photo-catcher(爬蟲)
 使用方法：
 1. 使用Spyder開啟程式碼，按下執行。
 2. 在選擇輸入區輸入你想要抓取的畫師名稱(名稱必須與網站所記錄的名稱一致)
