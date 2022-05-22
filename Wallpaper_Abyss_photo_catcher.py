@@ -45,7 +45,7 @@ for href in soupFindPage:
     if not os.path.exists(now_dir+"\\"+Keyword):
         os.mkdir("./" +Keyword)
         os.chdir(now_dir+"\\" +Keyword)
-    print(output_url)
+    #print(output_url)
     with open(c[-12:-5]+".jpg",'wb') as f:  #選擇檔名並儲存
         f.write(output_url.content)
 print("擷取完成！")
