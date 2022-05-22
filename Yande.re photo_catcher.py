@@ -2,10 +2,12 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
-url=input('請輸入Url：')
-fileName=input('請輸入要儲存的資料夾名稱')
-frontUrl=url[:27]
-endUrl=url[28:]
+fictionName=input('請輸入作品名稱：')
+
+frontUrl="https://yande.re/post?page="
+endUrl="&tags="+fictionName
+url=frontUrl+"1"+endUrl
+
 url2="https://yande.re"
 re=requests.get(url)
 soup=BeautifulSoup(re.text,'html.parser')
@@ -17,9 +19,9 @@ totalPage=soup.find("div",{"role":"navigation"}).find_all("a")[-2].text
 #print(totalPage)總共頁
 
 now_dir = os.path.dirname(__file__)
-if not os.path.exists(fileName):
-    os.mkdir(fileName)
-os.chdir(now_dir+"\\" +fileName)
+if not os.path.exists(fictionName):
+    os.mkdir(fictionName)
+os.chdir(now_dir+"\\" +fictionName)
 
 for nPage in range(1,int(totalPage)+1):
     re=requests.get(frontUrl+str(nPage)+endUrl)
