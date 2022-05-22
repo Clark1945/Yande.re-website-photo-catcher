@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-insert_url = "https://wall.alphacoders.com/by_sub_category.php?id=315662&name=Elden+Ring+Wallpapers"#input('請輸入URL')
+insert_url = input('請輸入URL')
 Keyword = input("請輸入儲存資料夾名稱")
 req = requests.get(insert_url)
 print(req)
