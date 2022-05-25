@@ -6,7 +6,6 @@ Yande.re-website-photo-catcher(爬蟲)
 
  ただ練習用のプログラム、ちょっと使いやすくなったらまた更新します
  
-Yande.re 圖網:https://yande.re/post 
  
 2022/05/22 更新 --修正因多頁數產生的Bug問題。
  
