@@ -23,7 +23,7 @@ if not os.path.exists(fictionName):
     os.mkdir(fictionName)
 os.chdir(now_dir+"\\" +fictionName)
 
-for nPage in range(1,int(totalPage)+1):
+for nPage in range(3,int(totalPage)+1):
     re=requests.get(frontUrl+str(nPage)+endUrl)
     soup=BeautifulSoup(re.text,'html.parser')
     soupFind=soup.find_all('a',{'class':'thumb'}) 
@@ -43,15 +43,14 @@ for nPage in range(1,int(totalPage)+1):
         pic2=[]
         for gg in soupFind2:
            temp=gg.get('src')
-           pic2.append(temp)
-        #print(pic2)
-        for gh in pic2: 
-            K=gh.find('/yande.re')
-            gh2=gh[72:]
-            r=requests.get(gh)
-            with open(gh2,'wb') as f:   
-                f.write(r.content)
-                pic_count +=1
-                print("擷取第%s頁，第%d張中......" %(nPage,pic_count))
+           
+        #print(temp) 
+        gh=temp[72:80]+".jpg"
+        #print(gh)
+        r=requests.get(temp)
+        with open(gh,'wb') as f:   
+            f.write(r.content)
+        pic_count +=1
+        print("擷取第%s頁，第%d張中......" %(nPage,pic_count))
                 
 print("擷取完成！")
